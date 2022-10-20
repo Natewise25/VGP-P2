@@ -913,7 +913,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog_Pug_01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 343550245600344297, guid: 7e6852e39dd580d43b955ea2b1faba54, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e6852e39dd580d43b955ea2b1faba54, type: 3}
 --- !u!1001 &3259156570303002928
 PrefabInstance:
