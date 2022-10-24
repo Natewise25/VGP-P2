@@ -6,6 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] animalPrefabs;
     public int animalIndex;
+    private float spawnRangeX;
+    private float spawnPosZ;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +16,15 @@ public class SpawnManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+   {
+      if (Input.GetKeyDown(KeyCode.S)) { 
     {
-          if (Input.GetKeyDown(KeyCode.S)) { 
-             Instantiate(animalPrefabs[animalIndex], new Vector3(0, 0, 20),
+         SpawnRandomAnimal; 
+    }
+   }
+   void SpawnRandomAnimal()
+   {
+       Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+             Instantiate(animalPrefabs[animalIndex], spawnPos,
              animalPrefabs[animalIndex].transform.rotation);
-        }
    }
