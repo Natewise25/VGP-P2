@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +13,7 @@ public class SpawnManagerX : MonoBehaviour
 
     public int enemyCount;
     public int waveCount = 1;
+    public float enemySpeed = 50;
 
 
     public GameObject player; 
@@ -35,6 +36,7 @@ public class SpawnManagerX : MonoBehaviour
         float xPos = Random.Range(-spawnRangeX, spawnRangeX);
         float zPos = Random.Range(spawnZMin, spawnZMax);
         return new Vector3(xPos, 0, zPos);
+          
     }
 
 
@@ -55,6 +57,8 @@ public class SpawnManagerX : MonoBehaviour
         }
 
         waveCount++;
+        enemyCount += 25;
+        
         ResetPlayerPosition(); // put player back at start
 
     }
