@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Enemy" && hasPowerup);
+        if(collision.gameObject.tag == "Powerup" && hasPowerup);
         {
            // Debug.Log(collision.gameObject.tag);
             Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
