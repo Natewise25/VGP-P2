@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public Button restartButton;
     public GameObject titleScreen;
-    public bool isGameActive;
+    public bool isGameActive; //bool is a true or false
     private int score;
     private float spawnRate = 1.0f; 
     public TextMeshProUGUI livesText;
@@ -48,9 +48,11 @@ public class GameManager : MonoBehaviour
         }
         
     }
-    
+        //this is a header or a method signature for Update Score
+        //is has a parameter "scoreToAdd
      public void UpdateScore(int scoreToAdd)
     {
+        //+= is like score = score + scoreToAdd
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
     }
@@ -59,12 +61,16 @@ public class GameManager : MonoBehaviour
     {
         lives += livesToChange;
         livesText.text = "Lives:" + lives;
+        //tells us when to end the game if we are our of lives
         if (lives <= 0)
         {
+            //this is our method call, we are "calling" GameOver()
             GameOver();
         }
     }
-
+    
+    //this is another method header/method signature
+    //that dosent have a parameter
     public void GameOver()
     {
          restartButton.gameObject.SetActive(true);

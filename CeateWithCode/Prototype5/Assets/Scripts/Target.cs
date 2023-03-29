@@ -49,12 +49,27 @@ public class Target : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        //! is read "not" so this reads "if the gameobject is
+        //NOT the bad object anhd the game is running then
+        //take away life
         if(!gameObject.CompareTag("Bad") && gameManager.isGameActive)
         {
+            //call to the UpdateLives script in GameManager
+            //-1 is the argument to the method
             gameManager.UpdateLives(-1);
         }
     }
 
+
+    public void DestroyTarget()
+    {
+        if(gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            gameManager.UpdateScore(pointValue);
+        }
+    }
     
     Vector3 RandomForce()
     {

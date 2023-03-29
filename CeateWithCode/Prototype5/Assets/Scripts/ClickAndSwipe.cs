@@ -23,6 +23,8 @@ public class ClickAndSwipe : MonoBehaviour
         col = GetComponent<BoxCollider>();
         trail.enabled = false;
         col.enabled = false;
+        //this "finds" the GameManager script so we can use
+        //public variables and methods from it
 
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
@@ -67,6 +69,7 @@ public class ClickAndSwipe : MonoBehaviour
         if(collision.gameObject.GetComponent<Target>())
         {
             //Destroy the target
+            collision.gameObject.GetComponent<Target>().DestroyTarget();
         }
     }
 
